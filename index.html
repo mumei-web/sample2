@@ -267,8 +267,12 @@
 <section id="profile" class="py-24 px-5 sm:px-8">
   <div class="max-w-4xl mx-auto grid sm:grid-cols-2 gap-10 items-center">
     <div class="fade-up relative">
-      <div class="rounded-2xl overflow-hidden shadow-md" style="border:6px solid #fff;">
-        <img src="imageskoe/shokai.jpg" alt="コンサルタントプロフィール写真" class="w-full h-80 object-cover">
+      <!-- ★ここに修正を適用★ -->
+      <!-- rounded-2xl (角丸) から rounded-full (正円) に変更 -->
+      <!-- overflow-hidden を維持し、aspect-square (1:1) を追加して円を保つ -->
+      <div class="rounded-full overflow-hidden shadow-md aspect-square" style="border:6px solid #fff;">
+        <!-- w-full h-full を指定し、h-80 を削除して1:1の円にフィットさせる -->
+        <img src="imageskoe/shokai.jpg" alt="コンサルタントプロフィール写真" class="w-full h-full object-cover">
       </div>
       <div class="dots absolute -bottom-4 -right-4 bg-white rounded-full px-3 py-2 shadow-md"><span></span><span></span><span></span></div>
     </div>
