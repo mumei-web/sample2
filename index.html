@@ -83,6 +83,40 @@
 
   ::selection{background:var(--purple-deep); color:#fff;}
 
+  .check-card{
+    background:#fff;
+    border:1px solid #F4E9EF;
+    border-radius:1.25rem;
+    padding:1.1rem 1.25rem;
+    display:flex;
+    align-items:flex-start;
+    gap:.7rem;
+    box-shadow:0 2px 10px rgba(198,162,232,.06);
+  }
+  .check-icon{
+    flex-shrink:0;
+    width:26px;height:26px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(120deg,var(--pink-deep),var(--purple-deep));
+    color:#fff;
+    font-size:14px;
+    margin-top:2px;
+  }
+
+  .target-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    padding:.4rem 1rem;
+    border-radius:999px;
+    font-size:.75rem;
+    font-weight:700;
+    background:#fff;
+    box-shadow:0 2px 8px rgba(198,162,232,.15);
+    color:var(--ink-soft);
+  }
+
   @media (prefers-reduced-motion: reduce){
     .blob,.dots span,.btn-gradient{animation:none;}
   }
@@ -100,11 +134,12 @@
     </a>
 
     <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#concern" class="hover:text-[var(--purple-deep)] transition-colors">こんな方へ</a>
       <a href="#service" class="hover:text-[var(--purple-deep)] transition-colors">サービス</a>
       <a href="#price" class="hover:text-[var(--purple-deep)] transition-colors">メニュー・料金</a>
       <a href="#voice" class="hover:text-[var(--purple-deep)] transition-colors">お客様の声</a>
       <a href="#profile" class="hover:text-[var(--purple-deep)] transition-colors">プロフィール</a>
-      <a href="#reserve" class="px-5 py-2 rounded-2xl btn-gradient text-white shadow-sm hover:shadow-md transition-shadow">予約・お問合せ</a>
+      <a href="#reserve" class="px-5 py-2 rounded-2xl btn-gradient text-white shadow-sm hover:shadow-md transition-shadow">自分に似合うを知ってみる</a>
     </nav>
 
     <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5" aria-label="メニューを開く">
@@ -116,6 +151,7 @@
 
   <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-white/60">
     <div class="px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="#concern" class="mobile-link">こんな方へ</a>
       <a href="#service" class="mobile-link">サービス</a>
       <a href="#price" class="mobile-link">メニュー・料金</a>
       <a href="#voice" class="mobile-link">お客様の声</a>
@@ -133,12 +169,19 @@
 
   <div class="relative max-w-3xl mx-auto text-center">
     <div class="dots mb-5"><span></span><span></span><span></span></div>
+
+    <div class="flex flex-wrap justify-center gap-2 mb-6">
+      <span class="target-pill">🎨 何が似合うか分からない方へ</span>
+      <span class="target-pill">👗 服選び・メイクにお悩みの方へ</span>
+    </div>
+
     <p class="font-accent italic text-lg sm:text-xl mb-3" style="color:var(--purple-deep);">Personal Color &amp; Style Consulting</p>
     <h1 class="font-display font-900 text-3xl sm:text-5xl leading-relaxed sm:leading-relaxed">
       あなたの魅力を最大限に引き出す<br class="hidden sm:block">
       <span style="background:linear-gradient(120deg,var(--pink-deep),var(--purple-deep) 60%,var(--mint-deep));-webkit-background-clip:text;background-clip:text;color:transparent;">イメージコンサルティング</span>
     </h1>
     <p class="mt-6 text-base sm:text-lg" style="color:var(--ink-soft);">あなたらしさを大切に、理想の自分へ。</p>
+    <p class="mt-2 text-sm sm:text-base" style="color:var(--ink-soft);">パーソナルカラー・骨格・メイクから、「自分に似合う」を一緒に見つけませんか？</p>
 
     <a href="https://forms.gle/4BenNEtoWb1Mt8meA" target="_blank" rel="noopener"
      class="mt-16 inline-flex items-center gap-2 px-10 py-4 rounded-2xl text-white font-bold btn-gradient shadow-md hover:shadow-lg transition-shadow">
@@ -146,8 +189,84 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
       <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
     </svg>
-    予約フォームへ
+    自分に似合うを知ってみる
   </a>
+  </div>
+</section>
+
+<!-- こんな方におすすめ（お悩み → 変化 → CTA） -->
+<section id="concern" class="py-24 px-5 sm:px-8" style="background:linear-gradient(180deg,var(--milk),#FBF6FA);">
+  <div class="max-w-4xl mx-auto">
+
+    <!-- 導入コピー -->
+    <div class="text-center mb-12 fade-up">
+      <p class="font-accent italic text-sm tracking-widest" style="color:var(--purple-deep);">For you</p>
+      <h2 class="font-display font-900 text-2xl sm:text-3xl mt-2 leading-relaxed">
+        「何が似合うのか分からない」<br class="hidden sm:block">
+        そんなあなたへ。
+      </h2>
+      <p class="mt-5 text-sm sm:text-base leading-loose" style="color:var(--ink-soft);">
+        毎日の服選びやメイクで、<br>
+        こんなお悩みはありませんか？
+      </p>
+    </div>
+
+    <!-- チェックリスト -->
+    <div class="grid sm:grid-cols-2 gap-4 mb-16 fade-up">
+      <div class="check-card"><span class="check-icon">✓</span><p class="text-sm leading-relaxed">服を買っても、なんとなくしっくりこない</p></div>
+      <div class="check-card"><span class="check-icon">✓</span><p class="text-sm leading-relaxed">自分に似合う色が分からない</p></div>
+      <div class="check-card"><span class="check-icon">✓</span><p class="text-sm leading-relaxed">メイクがいつも同じになってしまう</p></div>
+      <div class="check-card"><span class="check-icon">✓</span><p class="text-sm leading-relaxed">髪型を変えたいけど、何が似合うか分からない</p></div>
+      <div class="check-card"><span class="check-icon">✓</span><p class="text-sm leading-relaxed">「垢抜けたい」と思っているけど、何を変えればいいか分からない</p></div>
+      <div class="check-card"><span class="check-icon">✓</span><p class="text-sm leading-relaxed">自分の魅力をもっと引き出したい</p></div>
+      <div class="check-card"><span class="check-icon">✓</span><p class="text-sm leading-relaxed">買い物で失敗することが多い</p></div>
+      <div class="check-card"><span class="check-icon">✓</span><p class="text-sm leading-relaxed">仕事・デート・婚活など、大切な場面で印象を良くしたい</p></div>
+      <div class="check-card"><span class="check-icon">✓</span><p class="text-sm leading-relaxed">年齢や環境の変化に合わせて、自分のスタイルを見直したい</p></div>
+      <div class="check-card"><span class="check-icon">✓</span><p class="text-sm leading-relaxed">「似合う」だけじゃなく、「自分らしい」おしゃれを楽しみたい</p></div>
+    </div>
+
+    <div class="divider-dots w-16 mx-auto mb-16"></div>
+
+    <!-- 変化の提示 -->
+    <div class="text-center fade-up">
+      <p class="text-sm sm:text-base leading-loose mb-2" style="color:var(--ink-soft);">
+        イメージコンサルティングは、
+      </p>
+      <h3 class="font-display font-900 text-xl sm:text-2xl mb-6">
+        「似合うもの」を知るだけではありません。
+      </h3>
+      <p class="text-sm sm:text-base leading-loose mb-8" style="color:var(--ink-soft);">
+        パーソナルカラー・骨格・メイク・ファッションを通して、<br>
+        あなたが本来持っている魅力を見つけ、
+      </p>
+
+      <div class="flex items-center justify-center gap-4 mb-8 flex-wrap">
+        <span class="font-display font-700 text-base sm:text-lg" style="color:var(--ink-soft);">「なんとなく選ぶ」</span>
+        <span class="font-accent italic text-2xl" style="color:var(--purple-deep);">→</span>
+        <span class="font-display font-900 text-base sm:text-lg" style="background:linear-gradient(120deg,var(--pink-deep),var(--purple-deep));-webkit-background-clip:text;background-clip:text;color:transparent;">「自信を持って選べる」へ。</span>
+      </div>
+
+      <p class="text-sm sm:text-base leading-loose mb-10" style="color:var(--ink-soft);">
+        あなたの個性や雰囲気、ライフスタイル、<br>
+        そして「こんな自分になりたい」という想いまで大切にしながら、<br>
+        あなたらしい魅力の引き出し方をご提案します。
+      </p>
+
+      <p class="font-display font-700 text-lg sm:text-xl mb-2">
+        「これ、私に似合う！」を増やして、
+      </p>
+      <p class="font-display font-900 text-xl sm:text-2xl mb-12" style="color:var(--pink-deep);">
+        毎日の自分をもっと好きになる。
+      </p>
+
+      <a href="https://forms.gle/4BenNEtoWb1Mt8meA" target="_blank" rel="noopener"
+       class="inline-flex items-center gap-2 px-10 py-4 rounded-2xl text-white font-bold btn-gradient shadow-md hover:shadow-lg transition-shadow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+          <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+        </svg>
+        自分に似合うを知ってみる
+      </a>
+    </div>
   </div>
 </section>
 
@@ -267,11 +386,7 @@
 <section id="profile" class="py-24 px-5 sm:px-8">
   <div class="max-w-4xl mx-auto grid sm:grid-cols-2 gap-10 items-center">
     <div class="fade-up relative">
-      <!-- ★ここに修正を適用★ -->
-      <!-- rounded-2xl (角丸) から rounded-full (正円) に変更 -->
-      <!-- overflow-hidden を維持し、aspect-square (1:1) を追加して円を保つ -->
       <div class="rounded-full overflow-hidden shadow-md aspect-square" style="border:6px solid #fff;">
-        <!-- w-full h-full を指定し、h-80 を削除して1:1の円にフィットさせる -->
         <img src="imageskoe/shokai.jpg" alt="コンサルタントプロフィール写真" class="w-full h-full object-cover">
       </div>
       <div class="dots absolute -bottom-4 -right-4 bg-white rounded-full px-3 py-2 shadow-md"><span></span><span></span><span></span></div>
@@ -356,13 +471,11 @@
 
 <!-- 予約・お問い合わせ -->
 <section id="reserve" class="relative overflow-hidden py-28 px-5 sm:px-8 bg-cover bg-center" style="background-image: url('imageskoe/hai1.jpg');">
-  <!-- 写真の上に少し暗め（薄い黒）のオーバーレイを重ねて雰囲気を落ち着かせます -->
   <div class="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
 
   <div class="blob w-72 h-72 -bottom-10 -right-10 z-0" style="background:var(--purple-deep);"></div>
   <div class="blob w-64 h-64 top-0 left-10 z-0" style="background:var(--mint-deep); animation-delay:3s;"></div>
 
-  <!-- コンテンツ部分：文字が見やすいように白ベースのカードで囲んでいます -->
   <div class="relative z-10 max-w-2xl mx-auto text-center fade-up bg-white/90 backdrop-blur-md p-8 sm:p-12 rounded-3xl shadow-xl">
     <p class="font-accent italic text-sm tracking-widest" style="color:var(--purple-deep);">Reservation</p>
     <h2 class="font-display font-900 text-2xl sm:text-3xl mt-2 mb-4">予約・お問い合わせ</h2>
@@ -373,11 +486,10 @@
     </p>
     <a href="https://forms.gle/4BenNEtoWb1Mt8meA" target="_blank" rel="noopener"
        class="inline-flex items-center gap-2 px-10 py-4 rounded-2xl text-white font-bold btn-gradient shadow-md hover:shadow-lg transition-shadow">
-      <!-- Googleフォーム / クリップボードアイコン -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
         <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
       </svg>
-      予約フォームへ
+      まずは相談してみる
     </a>
   </div>
 </section>
@@ -405,4 +517,4 @@
   document.querySelectorAll('.fade-up').forEach(el=> io.observe(el));
 </script>
 </body>
-</html>ß
+</html>
